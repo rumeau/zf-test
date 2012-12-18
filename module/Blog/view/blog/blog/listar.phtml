@@ -1,0 +1,23 @@
+<h1>Accion Test</h1>
+<p>Esta es una accion del controlador TestController del modulo Test</p>
+<p>Y Estos son los posts creados</p>
+
+<div class="">
+    <a href="<?php echo $this->url('test', array(
+        'module' => 'blog',
+        'controller' => 'blog',
+        'action' => 'crear'
+        )); ?>" class="btn btn-success">Crear nuevo Post</a>
+        <br />
+</div>
+
+<table class="table">
+<?php foreach ($this->results as $post) : ?>
+    <tr>
+        <td><?php echo $post->id_post; ?></td>
+        <td><?php echo $post->titulo; ?></td>
+        <td><?php echo $post->getDate('d/m/Y'); ?></td>
+        <td><?php echo $post->getDate('H:i'); ?></td>
+    </tr>
+<?php endforeach; ?>
+</table>

@@ -1,0 +1,30 @@
+<h2>Crear Post</h2>
+<div class="">
+    <?php
+    $form = $this->form;
+    $form->prepare();
+    
+    echo $this->form()->openTag($form);
+    ?>
+    <div class="control-group">
+        <?php echo $this->formLabel($form->get('titulo')); ?>
+        <div class="controls">
+            <?php echo $this->formText($form->get('titulo')); ?>
+        </div>
+        <?php echo $this->formElementErrors($form->get('titulo')); ?>
+    </div>
+    
+    <div class="control-group">
+        <?php echo $this->formLabel($form->get('contenido')); ?>
+        <div class="controls">
+            <?php echo $this->formTextarea($form->get('contenido')); ?>
+        </div>
+        <?php echo $this->formElementErrors($form->get('contenido')); ?>
+    </div>
+    
+    <div class="form-actions">
+        <?php echo $this->formSubmit($form->get('guardarpost')); ?>
+    </div>
+    
+    <?php echo $this->form()->closeTag(); ?>
+</div>
